@@ -1,0 +1,26 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "This bot fetches posts from my Tumblr account using Tumblr’s API, and then takes this media and on a scheduled timer, posts the corresponding post on a Twitter account. Backend API calls, etc. done in node.js, Front end UI written with HTML5 and CSS3, and perhaps using the React Javascript Framework at a later date. Running on a website hosted by GitHub. ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColeInc/twitter-bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot"
+  ],
+  "author": "Cole McConnell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColeInc/twitter-bot/issues"
+  },
+  "homepage": "https://github.com/ColeInc/twitter-bot#readme",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
