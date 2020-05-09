@@ -1,19 +1,24 @@
-function callTwitterAPI() {
-    const uri = "http://localhost:8188/UniProxService.svc/courses";
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", uri, true);
-    xhr.onload = () => {
-        const resp = JSON.parse(xhr.responseText);
-        displayCourses(resp.data);
-    }
-    xhr.send(null);
+'use strict';
+
+function fetchFromTumblr() {
+    const fs = require('fs');
+    var tumblr = require('tumblr.js');
+    
+    let data = fs.readFileSync('../authentication.json');
+    let tumblrDetails = JSON.parse(data);
+
+    var client = tumblr.createClient(tumblrDetails.authentication.tumblr);
+
+    client.blogPosts('pradaindustries', { limit: 1 }, function (err, resp) {
+        var postURL = resp.posts[0].short_url;
+        // console.log(postURL);
+        postToTwitter(postURL)
+    });
 }
 
-function main() {
-    var msg = 'Hello World';
-    console.log(msg);
-
-    //function callTwitterAPI();
+function postToTwitter(postURL) {
+    console.log(postURL);
+    console.log(tumblrDetails.authentication.twitter)
 }
 
-main();
+fetchFromTumblr();
